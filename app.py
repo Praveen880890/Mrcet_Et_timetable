@@ -2,6 +2,7 @@
 import sdef as s
 import data as do
 import PySimpleGUI as sg
+import re
 import pyautogui
 import time as t
 import datetime as dt
@@ -102,6 +103,7 @@ while True:
         p="END"
         p2="END"
       else:
+        #second year timing end period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(15,50):
             window["timestamp"].update("[15:50-00:00]")
             table_content = [["", "2nd YEAR"],
@@ -109,9 +111,9 @@ while True:
                              ["CS", "-----", "-----"],
                              ["DS", "-----", "-----"]]
             window["-table-"].update(values=table_content, row_colors=((0, color), (4, color),(8,color)))
-
+        #third year timings
         if t_to_m(cur_t[0], cur_t[1]) >= t_to_m(15, 30):
-            window["timestamp2"].update("[15:50-00:00]")
+            window["timestamp2"].update("[15:30-00:00]")
             table_content2 = [["", "3rd YEAR"],
                               ["IOT", "-----", "-----"],
                               ["CS", "-----", "-----"],
@@ -121,7 +123,7 @@ while True:
                               ["CS", "-----", "-----"],
                               ["DS", "-----", "-----"]]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color), (8, color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(15,10) and t_to_m(cur_t[0],cur_t[1])<t_to_m(15,50):
             p = "7TH"
             i=7
@@ -132,7 +134,7 @@ while True:
                              ["DS", do.ds2[w1][i], do.teach_ds2[do.ds2[w1][i]]]
                              ]
             window["-table-"].update(values=table_content,row_colors=((0,color),(4,color),(8,color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(14,20) and t_to_m(cur_t[0],cur_t[1])<t_to_m(15,10):
             p = "6TH"
             i=6
@@ -160,7 +162,7 @@ while True:
                              ]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color),(8,color)))
 
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(13,30) and t_to_m(cur_t[0],cur_t[1])<t_to_m(14,20):
             p = "5TH"
             i=5
@@ -194,7 +196,7 @@ while True:
                              ["DS", do.ds4[w1][i], do.teach_ds4[do.ds4[w1][i]]]
                              ]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color),(8,color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(12,50) and t_to_m(cur_t[0],cur_t[1])<t_to_m(13,30):
             p = "LUNCH"
             p2= "LUNCH"
@@ -215,7 +217,7 @@ while True:
                              ]
             window["-table-"].update(values=table_content, row_colors=((0, color), (4, color),(8,color)))
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color), (8, color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(12,00) and t_to_m(cur_t[0],cur_t[1])<t_to_m(12,50):
             p="4 TH"
             p2="4 TH"
@@ -237,7 +239,7 @@ while True:
                             ]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color), (8, color)))
             window["-table-"].update(values=table_content, row_colors=((0, color), (4, color),(8,color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(11,10) and t_to_m(cur_t[0],cur_t[1])<t_to_m(12,00):
             p="3 RD"
             p2="3 RD"
@@ -260,7 +262,7 @@ while True:
             ]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color), (8, color)))
             window["-table-"].update(values=table_content, row_colors=((0, color), (4, color),(8,color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(10,20) and t_to_m(cur_t[0],cur_t[1])<t_to_m(11,10):
             p="2 ND"
             p2="2 ND"
@@ -283,7 +285,7 @@ while True:
             ]
             window["-table2-"].update(values=table_content2, row_colors=((0, color), (4, color), (8, color)))
             window["-table-"].update(values=table_content, row_colors=((0, color), (4, color),(8,color)))
-
+        # second year timing 7TH period
         if t_to_m(cur_t[0],cur_t[1])>=t_to_m(9,30) and t_to_m(cur_t[0],cur_t[1])<t_to_m(10,20):
             p="1 ST"
             p2="1 ST"
